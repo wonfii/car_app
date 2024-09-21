@@ -1,0 +1,11 @@
+﻿@model car_app.Models.Car
+
+
+    <div class="card-body">
+        <h5 class="card-title">@Model.Model</h5>
+        <p class="card-text">Color: @Model.Color | Year: @Model.Year | Model Type: @Model.ModelType</p>
+        <hr />
+        <p>@Model.Description</p>
+        <a asp-action="Index"class="btn btn-dark">Back</a>
+    </div>
+

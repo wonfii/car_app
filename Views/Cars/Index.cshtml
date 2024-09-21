@@ -1,0 +1,31 @@
+﻿@model List<car_app.Models.Car>
+
+<h1>Choose your car</h1>
+
+@if (Model.Any())
+{
+    <h3>@Model.Count cars are avaliable</h3>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 ms-3 mt-4">
+        @foreach (var car in Model)
+        {
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">@car.Model</h5>
+                        <p class="card-text">Color: @car.Color | Year: @car.Year | Model Type: @car.ModelType</p>
+                        <a asp-action="Details" asp-route-id="@car.Id" class="btn btn-dark">Show details</a>
+                        <a asp-action="Delete" asp-route-id="@car.Id" class="btn btn-dark">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+   
+}
+else
+{
+    <p>Zero cars are avaliable.</p>
+}
